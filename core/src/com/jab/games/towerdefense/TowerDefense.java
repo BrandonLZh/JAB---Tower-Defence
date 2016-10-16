@@ -1,7 +1,9 @@
 package com.jab.games.towerdefense;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,6 +16,10 @@ public class TowerDefense extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+        Music music = Gdx.audio.newMusic(Gdx.files.getFileHandle("theme.mp3", Files.FileType.Internal));
+        music.setVolume(0.5f);
+        music.play();
+        music.setLooping(true);
 	}
 
 	@Override
